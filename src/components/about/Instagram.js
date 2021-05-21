@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Header2, Body2, ProjectTitle, ProjectTitleBold } from '../theme/Texts'
+import { ProjectTitle, ProjectTitleBold } from '../theme/Texts'
 import SubTag from '../misc/SubTag'
 
 export default function Instagram() {
@@ -28,7 +28,7 @@ export default function Instagram() {
         posts.map((post, index) => {
           if(post.media_type === 'VIDEO') {
           return <ProjectContainer key={post.id} >
-                  <a href={post.permalink} target='_blank' style={{textDecoration:'none', color:'inherit'}}>
+                  <a href={post.permalink} target='_blank' rel="noreferrer" style={{textDecoration:'none', color:'inherit'}}>
                   <Video width="320" height="240" >
                     <source src={post.media_url} />
                     Your browser does not support the video tag.
@@ -37,7 +37,7 @@ export default function Instagram() {
                 </ProjectContainer>
           } else {
           return <ProjectContainer key={post.id}>
-                  <a href={post.permalink} target='_blank' style={{textDecoration:'none', color:'inherit'}}>
+                  <a href={post.permalink} target='_blank' rel="noreferrer" style={{textDecoration:'none', color:'inherit'}}>
                   <ImageContainer style={{backgroundImage: `url(${post.media_url})`}}/>
                   </a>
                 </ProjectContainer>

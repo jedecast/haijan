@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Header2, Body1, Body2, ProjectTitle, ProjectTitleBold } from '../theme/Texts'
+import { Body2, ProjectTitle, ProjectTitleBold } from '../theme/Texts'
 import SubTag from '../misc/SubTag'
 
 export default function NFTs() {
@@ -30,7 +30,7 @@ export default function NFTs() {
         nfts.map((nft, index) => {
           if(index < 12) {
           return <ProjectContainer key={nft.name}>
-                  <a href={nft.permalink} target='_blank' style={{textDecoration:'none', color:'inherit'}}>
+                  <a href={nft.permalink} target='_blank' rel="noreferrer" style={{textDecoration:'none', color:'inherit'}}>
                   <SubTag color={'#F2C94C'} subTag={nft.asset_contract.name} />
 
                   <ProjectTitle style={{height:'48px'}}>

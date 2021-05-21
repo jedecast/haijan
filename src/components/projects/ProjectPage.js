@@ -1,8 +1,5 @@
 import React from "react"
-import styled from 'styled-components'
-import { Header1, Body1 } from '../theme/Texts'
-import SubTag from '../misc/SubTag'
-import Container from 'react-bootstrap/Container'
+import { Header1 } from '../theme/Texts'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../footer/Footer'
 

@@ -17,7 +17,6 @@ function Projects() {
       ...p,
       filtered: p.category.includes(filter)
     }));
-    console.log(filtered)
     setProjects(filtered);
   }, [filter]);
 
@@ -38,7 +37,7 @@ function Projects() {
       })
   }, [])
 
-  console.log(medium)
+  //console.log(medium)
 
   return (
     <ProjectContainer>
@@ -46,7 +45,7 @@ function Projects() {
         <Header2 style={{margin:'0 32px 0 24px'}}>Explore</Header2>
 
         {filters.map((f) => (
-          <ProjectLabel active={filter === f.label} onClick={() => setFilter(f.label)}>
+          <ProjectLabel active={filter === f.label} onClick={() => setFilter(f.label)} key={f.label}>
             <Button circle={f.color}>{f.label}</Button>
           </ProjectLabel>
         ))}

@@ -7,8 +7,6 @@ import { AiOutlineTwitter } from "react-icons/ai"
 import { FaExternalLinkAlt, FaMedium, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
 
 
-import { FaBeer } from 'react-icons/fa';
-
 export default function NavItemMenu({children})  {
   return(
   <DropDownContainer>

@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import RobotoRegular from '../../fonts/Roboto/Roboto-Regular.ttf'
 
 export default function ToolTip({children, text, clickable}) {
-  const [ hover, setHover ] = React.useState('false')
   const [ content, setContent ] = React.useState(text[0])
 
   const handleTextOverride = () => {

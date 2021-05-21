@@ -6,9 +6,8 @@ import Status from '../misc/Status'
 import Button from '../buttons/Button'
 
 /* ICONS */
-import { FiChevronDown } from "react-icons/fi"
 import { AiOutlineTwitter } from "react-icons/ai"
-import { FaExternalLinkAlt, FaMedium, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
+import { FaMedium, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
 
 export default function Footer() {
 

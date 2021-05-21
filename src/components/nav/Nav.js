@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Header1, Body1, StyledLink } from '../theme/Texts'
+import { StyledLink } from '../theme/Texts'
 import NavItemMenu from './NavItemMenu'
 
 const navItems = [

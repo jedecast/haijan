@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Typewriter from 'typewriter-effect';
-import { Header1, Body1, Body2 } from '../components/theme/Texts'
+import { Header1, Body1 } from '../components/theme/Texts'
 import Greetings from '../components/misc/Greetings'
 import Tooltip from '../components/misc/Tooltip'
 import Status from '../components/misc/Status'

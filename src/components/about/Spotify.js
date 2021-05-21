@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Header2, Body1, ProjectTitle, ProjectTitleBold } from '../theme/Texts'
+import { ProjectTitle, ProjectTitleBold } from '../theme/Texts'
 import SubTag from '../misc/SubTag'
 
 export default function Spotify() {

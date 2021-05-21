@@ -1,9 +1,6 @@
 import React from "react"
 import styled from 'styled-components'
-import RobotoMono from '../../fonts/RobotoMono/RobotoMono-Regular.ttf'
-import RobotoBold from '../../fonts/Roboto/Roboto-Bold.ttf'
-import RobotoRegular from '../../fonts/Roboto/Roboto-Regular.ttf'
-import { SubTags, ProjectTitle, ProjectTitleBold, Body2 } from '../theme/Texts'
+import { ProjectTitle, ProjectTitleBold, Body2 } from '../theme/Texts'
 import SubTag from '../misc/SubTag'
 import { Link } from "react-router-dom";
 

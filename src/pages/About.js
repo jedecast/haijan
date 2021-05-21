@@ -1,10 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Header2, Body1, Body2, Small, ProjectTitle, ProjectTitleBold } from '../components/theme/Texts'
+import { Header2, Body1, Small, ProjectTitleBold } from '../components/theme/Texts'
 import Footer from '../components/footer/Footer'
-import Tooltip from '../components/misc/Tooltip'
-import SubTag from '../components/misc/SubTag'
-import jan from '../components/media/doodleJan.png'
 import profile from '../components/media/jan2.png'
 import Spotify from '../components/about/Spotify'
 import MySkillset from '../components/about/MySkillset'
@@ -73,11 +70,6 @@ const Image = styled.div`
     margin-right: 0px;
     height: 320px;
   }
-`
-
-const SectionContainer = styled.div`
-  margin: 124px 24px 124px 24px;
-  position: relative;
 `
 
 
