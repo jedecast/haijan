@@ -4,6 +4,8 @@ import { data, filters } from '../../utils/_DATA'
 import { Header2 } from '../theme/Texts'
 import Button from '../buttons/Button'
 import ProjectItem from './ProjectItem'
+import ReactGA from 'react-ga'
+
 
 function Projects() {
   const [filter, setFilter] = React.useState("Writing");
@@ -37,6 +39,16 @@ function Projects() {
       })
   }, [])
 
+  //google analytics click tracker
+  const gaEventHandler = (e, name) => {
+    e.preventDefault()
+    //handles when a nav has been clicked on
+    ReactGA.event({
+      category: 'Projects',
+      action: 'Clicked on ' + name
+    });
+  }
+
   //console.log(medium)
 
   return (
@@ -45,9 +57,11 @@ function Projects() {
         <Header2 style={{margin:'0 32px 0 24px'}}>Explore</Header2>
 
         {filters.map((f) => (
-          <ProjectLabel active={filter === f.label} onClick={() => setFilter(f.label)} key={f.label}>
-            <Button circle={f.color}>{f.label}</Button>
-          </ProjectLabel>
+          <div key={f.label} onClick={(e) => gaEventHandler(e, f.label)}>
+            <ProjectLabel active={filter === f.label} onClick={() => setFilter(f.label)}>
+              <Button circle={f.color}>{f.label}</Button>
+            </ProjectLabel>
+          </div>
         ))}
 
       </ProjectLabelContainer>
@@ -73,6 +87,7 @@ function Projects() {
               information={item.description.replace( /(<([^>]+)>)/ig, '')}
               content={item.content}
               date={item.pubDate}
+              onClick={(e) => gaEventHandler(e, item.title)}
               >
             </ProjectItem>
         )

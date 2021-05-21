@@ -7,9 +7,17 @@ import About from './About'
 import Nav from '../components/nav/Nav'
 import ProjectPage from '../components/projects/ProjectPage'
 import ScrollToTop from '../components/misc/ScrollToTop'
+import ReactGA from 'react-ga'
 
 function App() {
   const  [ theme, setTheme ] = React.useState('light')
+
+  React.useEffect(() => {
+    ReactGA.initialize('G-0QGQHT5LJX');
+    //to report page view
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
+
   return (
     <Router>
       <HaiProvider value={{theme, setTheme}}>

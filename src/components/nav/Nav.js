@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { StyledLink } from '../theme/Texts'
 import NavItemMenu from './NavItemMenu'
+import ReactGA from 'react-ga'
 
 const navItems = [
   {
@@ -23,6 +24,7 @@ const navItems = [
 
 
 function Nav() {
+
   return (
     <NavContainer>
       <LogoContainer />
@@ -30,7 +32,7 @@ function Nav() {
         {navItems.map((nav) => (
           nav.isMenu === true
             ? <StyledLink to={nav.link} key={nav.name}>
-                  <NavItemMenu>{nav.name}</NavItemMenu >
+                  <NavItemMenu>{nav.name}</NavItemMenu>
               </StyledLink>
             : <StyledLink to={nav.link} key={nav.name}>
                   {nav.name}

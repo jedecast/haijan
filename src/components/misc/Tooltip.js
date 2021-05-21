@@ -1,10 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import ReactGA from 'react-ga'
 
 export default function ToolTip({children, text, clickable}) {
   const [ content, setContent ] = React.useState(text[0])
 
+
   const handleTextOverride = () => {
+
+    //handles when a tool tip is clicked
+    ReactGA.event({
+      category: 'Button',
+      action: 'Clicked on' + text[0]
+    });
+
     setContent(text[1])
     navigator.clipboard.writeText(text[2])
   }

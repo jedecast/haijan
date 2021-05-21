@@ -7,6 +7,12 @@ export default function NFTs() {
 
   const [ nfts, setNFTs ] = React.useState([])
 
+  /*
+    index.js:1 Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+    in Instagram (at About.js:38)
+    in div (at About.js:14)
+    in About (created by Context.Consumer)
+  */
   React.useEffect(() => {
     fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&owner=0x14b482Bd10712202012e4366d6CdE39191b12606')
       .then(resp => resp.json())

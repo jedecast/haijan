@@ -1,5 +1,6 @@
 import React from "react"
 import styled from 'styled-components'
+import ReactGA from 'react-ga'
 
 /* ICONS */
 import { FiChevronDown } from "react-icons/fi"
@@ -8,6 +9,15 @@ import { FaExternalLinkAlt, FaMedium, FaInstagram, FaLinkedin, FaYoutube } from 
 
 
 export default function NavItemMenu({children})  {
+  const gaEventHandler = (e, nav) => {
+    e.preventDefault()
+    //handles when a nav has been clicked on
+    ReactGA.event({
+      category: 'Nav Item',
+      action: 'Clicked on ' + nav
+    });
+  }
+
   return(
   <DropDownContainer>
     <p>
@@ -16,7 +26,7 @@ export default function NavItemMenu({children})  {
     <DropDownMenu>
       <ul style={{listStyle:"none", margin:'0px', padding:'0px'}}>
 
-        <DropItem>
+        <DropItem onClick={(e) => gaEventHandler(e, 'linkedin')}>
           <FaLinkedin style={{width: '18px', height: '18px'}}/>
           &nbsp;&nbsp;Linkedin
           <ExternalIcon>
@@ -24,7 +34,7 @@ export default function NavItemMenu({children})  {
           </ExternalIcon>
         </DropItem>
 
-        <DropItem>
+        <DropItem onClick={(e) => gaEventHandler(e, 'twitter')}>
           <AiOutlineTwitter style={{width: '18px', height: '18px'}}/>
           &nbsp;&nbsp;Twitter
           <ExternalIcon>
@@ -32,7 +42,7 @@ export default function NavItemMenu({children})  {
           </ExternalIcon>
         </DropItem>
 
-        <DropItem>
+        <DropItem onClick={(e) => gaEventHandler(e, 'instagram')}>
           <FaInstagram style={{width: '18px', height: '18px'}}/>
           &nbsp;&nbsp;Instagram
           <ExternalIcon>
@@ -40,7 +50,7 @@ export default function NavItemMenu({children})  {
           </ExternalIcon>
         </DropItem>
 
-        <DropItem>
+        <DropItem onClick={(e) => gaEventHandler(e, 'medium')}>
           <FaMedium style={{width: '18px', height: '18px'}}/>
           &nbsp;&nbsp;Medium
           <ExternalIcon>
@@ -48,7 +58,7 @@ export default function NavItemMenu({children})  {
           </ExternalIcon>
         </DropItem>
 
-        <DropItem>
+        <DropItem onClick={(e) => gaEventHandler(e, 'youtube')}>
           <FaYoutube style={{width: '18px', height: '18px'}}/>
           &nbsp;&nbsp;Youtube
           <ExternalIcon>
