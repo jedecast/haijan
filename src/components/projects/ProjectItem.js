@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 export default function ProjectItem ({boldTitle, title, information, imgURL, color, textColor, date, content }) {
   let path = `/project/${title}`
-  const event = new Date(date);
 
   const getReadingTime = () => {
     const text = content.replace( /(<([^>]+)>)/ig, '')
@@ -16,11 +15,14 @@ export default function ProjectItem ({boldTitle, title, information, imgURL, col
     const time = Math.ceil(words / wpm)
     return time
   }
-
-  console.log(new Date(date))
+  const separatedFormat = date.split("-")
+  const day = separatedFormat[2].split(" ")
+  const newDate = separatedFormat.concat(day[0])
+  const event = new Date(newDate[0], newDate[1], newDate[3]);
+  console.log(event)
 
   const options = { month: 'long'}
-  let month = new Intl.DateTimeFormat('en-US', options).format(new Date(date))
+  let month = new Intl.DateTimeFormat('en-US', options).format(event)
   let subTag = month + ' ' + event.getDate() + ' • ' + getReadingTime() + ' min read'
 
   let firstWord = title.split(" ")[0]
