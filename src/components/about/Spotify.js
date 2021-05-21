@@ -12,58 +12,55 @@ export default function Spotify() {
     setPlaylist(e.target.value)
   }
 
-  const test = () => {
-    return <iframe src="https://open.spotify.com/embed/artist/3dz0NnIZhtKKeXZxLOxCam" width="100%" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-  }
 
   return (
     <SectionContainer>
 
       <ContentWrapper style={{width:'100%'}}>
-        <SubTag color={'#27AE60'} subTag={'SONGS JAN LIKES'}/>
+        <SubTag color={'#27AE60'} subTag={'SONGS I ENJOY'}/>
         <ProjectTitle>
           <ProjectTitleBold style={{color: '#27AE60'}}>Spotify — </ProjectTitleBold>
-          My favorite songs in different contexts.
-          <select name="cars" id="cars" onChange={(e) => handleChange(e)}>
-            <option value="porter">Porter Robinson</option>
-            <option value="simple">Simple Times</option>
-            <option value="jump">Jump</option>
-            <option value="vibe">Vibe</option>
-          </select>
-          This message will change depending on the context selected. "Ex. [Porter] is my fav artist of the year"
+          My favorite songs in different contexts. &nbsp;
+          <Select name="cars" id="cars" onChange={(e) => handleChange(e)}>
+            <Option value="porter">Porter Robinson</Option>
+            <Option value="simple">Simple Times</Option>
+            <Option value="jump">Jump</Option>
+            <Option value="vibe">Vibe</Option>
+          </Select> &nbsp;
+          { playlist === 'porter' && 'released his newest album "Nurture" this year and has been my go-to playlist to listen to.' }
+          { playlist === 'simple' && 'is a collection of lofi and instrumentals that gives off a nostalgic feel.' }
+          { playlist === 'jump' && 'is my playlist for when ... well ...  I jump. Jump roping is an exercise I have been actively doing this pandemic.' }
+          { playlist === 'vibe' && 'are songs to vibe to when I work or go on a long car ride.' }
+
         </ProjectTitle>
         {
           playlist === 'porter'
-          && <div style={{borderRadius:'16px', overflow:'hidden'}}>
-              <iframe src="https://open.spotify.com/embed/artist/3dz0NnIZhtKKeXZxLOxCam" width="100%" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-             </div>
+          && <SpotifyContainer>
+              <iframe src="https://open.spotify.com/embed/album/4Hjqdhj5rh816i1dfcUEaM" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="porter"></iframe>
+             </SpotifyContainer>
         }
 
 
         {
           playlist === 'simple'
           && <div style={{borderRadius:'16px', overflow:'hidden'}}>
-              <iframe src="https://open.spotify.com/embed/playlist/6fqBYAj3k7IpDAGR3LHNVp" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <iframe src="https://open.spotify.com/embed/playlist/6fqBYAj3k7IpDAGR3LHNVp" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="simple"></iframe>
              </div>
          }
 
         {
           playlist === 'jump'
           && <div style={{borderRadius:'16px', overflow:'hidden'}}>
-              <iframe src="https://open.spotify.com/embed/playlist/3Uy3JXEdvSMmcGDR6umX2K" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <iframe src="https://open.spotify.com/embed/playlist/3Uy3JXEdvSMmcGDR6umX2K" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="jump"></iframe>
              </div>
         }
 
         {
           playlist === 'vibe'
           && <div style={{borderRadius:'16px', overflow:'hidden'}}>
-              <iframe src="https://open.spotify.com/embed/playlist/1jZoHFKNkoxTGfsY85ijY6" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <iframe src="https://open.spotify.com/embed/playlist/1jZoHFKNkoxTGfsY85ijY6" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="vibe"></iframe>
             </div>
         }
-
-        <Body1 style={{marginTop:'32px'}}>
-          This is Jan. He is a designer, prototyper, and weeb. Recently, he started investing in stocks and crypto. He is interested in Web 3.0 and the potential that NFTs have in the future.
-        </Body1>
       </ContentWrapper>
 
     </SectionContainer>
@@ -81,4 +78,19 @@ const ContentWrapper = styled.div`
 const SectionContainer = styled.div`
   margin: 124px 24px 124px 24px;
   position: relative;
+`
+
+const Select = styled.select`
+  font-size: 24px;
+  padding: 2px 8px;
+`
+
+const Option = styled.option`
+  font-size: 24px;
+`
+
+const SpotifyContainer = styled.div`
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 32px;
 `

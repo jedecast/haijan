@@ -1,15 +1,11 @@
 export const filters = [
   {
     label: 'Writing',
-    color: '#F2C94C'
-  },
-  {
-    label: 'Work',
-    color: '#EB5757'
+    color: '#2D9CDB'
   },
   {
     label: 'Studio / Lab',
-    color: '#2D9CDB'
+    color: '#EB5757'
   },
   /*
   {

@@ -37,10 +37,9 @@ export const Header2 = styled.h3`
 `
 
 export const ProjectTitle = styled.h1`
-  font-size: 32px;
+  font-size: 28px;
   font-family: 'RobotoRegular';
   height: 96px;
-  overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 400;
   color: #4F4F4F;
@@ -49,6 +48,10 @@ export const ProjectTitle = styled.h1`
     font-family: 'RobotoRegular';
     src: url('${RobotoRegular}') format('opentype');
   }
+  display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 `
 
 export const ProjectTitleBold = styled.span`

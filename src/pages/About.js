@@ -5,79 +5,40 @@ import Footer from '../components/footer/Footer'
 import Tooltip from '../components/misc/Tooltip'
 import SubTag from '../components/misc/SubTag'
 import jan from '../components/media/doodleJan.png'
+import profile from '../components/media/jan2.png'
 import Spotify from '../components/about/Spotify'
+import MySkillset from '../components/about/MySkillset'
+import NFTs from '../components/about/NFTs'
+import Instagram from '../components/about/Instagram'
 
 function About() {
 
   return (
     <div>
       <HeroContainer>
-        <Image src='https://vanschneider.com/wp-content/uploads/2017/08/van1.jpg'/>
+        <Image style={{backgroundImage: `url(${profile})`}}/>
         <ContentWrapper>
           <Header2>
             <ProjectTitleBold style={{color: '#2D9CDB'}}>Jan De Castro — </ProjectTitleBold>
-            A bay-area based multi-disciplinary maker and designer. He uses his curiousity to tinker around different mediums - creating elegant, useful, and out of the box solutions in the process.
+            A bay-area based multi-disciplinary maker and designer <span style={{color:'#919191'}}>(but honestly just a curious kid in the inside)</span>. He uses his curiousity to tinker around different mediums - creating elegant, useful, and out of the box solutions in the process.
           </Header2>
           <Body1 style={{marginTop:'24px'}}>
-            This is Jan. He is a designer, prototyper, and weeb. Recently, he started investing in stocks and crypto. He is interested in Web 3.0 and the potential that NFTs have in the future.
-            <br /> <br /> He is currently designing in People Experience at Workday. At the side he likes doodling, researching the next investment, collecting NFTs, and jump roping/running.
+            Hello, I'm Jan. I'm a designer, prototyper, and tinkerer that enjoys reading up on new technologies and creating experiences that I think are interesting. In the past year, I've been heavily investing a lot of time learning about blockchain, investing (in stocks and crypto), and how to build leverage.
+            <br /> <br /> My goal with this website is to build a brand and have a centralized place to show case all my thoughts, creations, and curiosities.
+            <br /> <br /> I'm currently designing People Experience at Workday. At the side I like doodling, researching the next investment, collecting NFTs, and jump roping/running.
           </Body1>
           <Small>LAST UPDATED MAY 2021</Small>
         </ContentWrapper>
       </HeroContainer>
 
-      <SectionContainer>
 
-        <ContentWrapper style={{width:'100%'}}>
-          <SubTag color={'black'} subTag={'MY SKILLSET'}/>
-          <ProjectTitle>
-            <ProjectTitleBold style={{color: 'black'}}>Skillset — </ProjectTitleBold>
-            These are my skillsets
-          </ProjectTitle>
-
-          <Body1 style={{marginTop:'32px'}}>
-            This is Jan. He is a designer, prototyper, and weeb. Recently, he started investing in stocks and crypto. He is interested in Web 3.0 and the potential that NFTs have in the future.
-          </Body1>
-        </ContentWrapper>
-
-      </SectionContainer>
-
+      <MySkillset />
 
       <Spotify />
 
-      <SectionContainer>
+      <NFTs />
 
-        <ContentWrapper style={{width:'100%'}}>
-          <SubTag color={'#EB5757'} subTag={'INTRODUCTION '}/>
-          <ProjectTitle>
-            <ProjectTitleBold style={{color: '#EB5757'}}>Instagram — </ProjectTitleBold>
-            A collection of random doodles, scapes, and photography.
-          </ProjectTitle>
-          <MediaContainer>
-          </MediaContainer>
-          <Body1 style={{marginTop:'32px'}}>
-            This is Jan. He is a designer, prototyper, and weeb. Recently, he started investing in stocks and crypto. He is interested in Web 3.0 and the potential that NFTs have in the future.
-          </Body1>
-        </ContentWrapper>
-
-      </SectionContainer>
-
-      <SectionContainer>
-
-        <ContentWrapper style={{width:'100%'}}>
-          <SubTag color={'#F2C94C'} subTag={'INTRODUCTION '}/>
-          <ProjectTitle>
-            <ProjectTitleBold style={{color: '#F2C94C'}}>NFTs — </ProjectTitleBold>
-            My NFT portfolio. This space has so much potential. This is a small collection of my favorite NFTs that I was able to pickup.
-          </ProjectTitle>
-          <MediaContainer>
-          </MediaContainer>
-          <Body1 style={{marginTop:'32px'}}>
-            This is Jan. He is a designer, prototyper, and weeb. Recently, he started investing in stocks and crypto. He is interested in Web 3.0 and the potential that NFTs have in the future.
-          </Body1>
-        </ContentWrapper>
-
-      </SectionContainer>
+      <Instagram />
 
       <Footer />
     </div>
@@ -99,12 +60,18 @@ const ContentWrapper = styled.div`
   }
 `
 
-const Image = styled.img`
-  width: 50%;
-  margin-right: 32px;
+const Image = styled.div`
+  width: 42%;
+  height: 690px;
+  margin-right: 64px;
   border-radius: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   @media (max-width: 992px) {
     width: 100%;
+    margin-right: 0px;
+    height: 320px;
   }
 `
 
@@ -114,9 +81,5 @@ const SectionContainer = styled.div`
 `
 
 
-const MediaContainer = styled.div`
-  height: 1000px;
-  background-color: black;
-`
 
 export default About;

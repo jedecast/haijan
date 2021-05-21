@@ -29,10 +29,10 @@ function Nav() {
       <NavWrapper>
         {navItems.map((nav) => (
           nav.isMenu === true
-            ? <StyledLink to={nav.link}>
+            ? <StyledLink to={nav.link} key={nav.name}>
                   <NavItemMenu>{nav.name}</NavItemMenu >
               </StyledLink>
-            : <StyledLink to={nav.link}>
+            : <StyledLink to={nav.link} key={nav.name}>
                   {nav.name}
               </StyledLink>
         ))}

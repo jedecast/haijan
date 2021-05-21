@@ -5,24 +5,51 @@ import RobotoBold from '../../fonts/Roboto/Roboto-Bold.ttf'
 import RobotoRegular from '../../fonts/Roboto/Roboto-Regular.ttf'
 import { SubTags, ProjectTitle, ProjectTitleBold, Body2 } from '../theme/Texts'
 import SubTag from '../misc/SubTag'
+import { Link } from "react-router-dom";
 
 
+export default function ProjectItem ({boldTitle, title, information, imgURL, color, textColor, date, content }) {
+  let path = `/project/${title}`
+  const event = new Date(date);
 
-export default function ProjectItem ({subTag, boldTitle, title, information, imgURL, color, textColor }) {
+  const getReadingTime = () => {
+    const text = content.replace( /(<([^>]+)>)/ig, '')
+    const wpm = 225
+    const words = text.trim().split(/\s+/).length
+    const time = Math.ceil(words / wpm)
+    return time
+  }
+
+  const options = { month: 'long'}
+  let month = new Intl.DateTimeFormat('en-US', options).format(event)
+  let subTag = month + ' ' + event.getDate() + ' • ' + getReadingTime() + ' min read'
+
+  let firstWord = title.split(" ")[0]
+  let allWords = title.split(" ")
+
   return(
     <ProjectContainer>
-
+      <Link to={{
+        pathname: path,
+        state: { content, title }
+      }} style={{textDecoration: 'none', color: 'inherit'}}>
       <SubTag color={color} subTag={subTag} />
 
       <ProjectTitle>
-        <ProjectTitleBold style={{color: `${color}`}}>{boldTitle} — </ProjectTitleBold>
-        {title}
+        <ProjectTitleBold style={{color: `${color}`}}>{firstWord} — </ProjectTitleBold>
+        {
+          allWords.map((word, index) => {
+            if(index > 0) {
+              return word + ' '
+            }
+          })
+        }
       </ProjectTitle>
 
       <ImageContainer style={{backgroundImage: `url(${imgURL})`}}/>
 
       <Body2>{information}</Body2>
-
+      </Link>
     </ProjectContainer>
   )
 }
