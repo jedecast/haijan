@@ -17,8 +17,10 @@ export default function ProjectItem ({boldTitle, title, information, imgURL, col
     return time
   }
 
+  console.log(new Date(date))
+
   const options = { month: 'long'}
-  let month = new Intl.DateTimeFormat('en-US', options).format(event)
+  let month = new Intl.DateTimeFormat('en-US', options).format(new Date(date))
   let subTag = month + ' ' + event.getDate() + ' • ' + getReadingTime() + ' min read'
 
   let firstWord = title.split(" ")[0]
