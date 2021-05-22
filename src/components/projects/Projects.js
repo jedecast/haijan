@@ -26,7 +26,7 @@ function Projects() {
   //https://levelup.gitconnected.com/how-to-dynamically-render-your-medium-blog-posts-on-your-portfolio-site-6b008580bd34
   //https://www.geeksforgeeks.org/how-to-strip-out-html-tags-from-a-string-using-javascript/#:~:text=To%20strip%20out%20all%20the,innerText%20property%20from%20HTML%20DOM.
   React.useEffect(() => {
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@coinbaseblog')
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@haijan')
       .then(resp => resp.json())
       .then(data => {
         const filtered = data.items.map(p => ({
