@@ -6,19 +6,20 @@ export default function ToolTip({children, text, clickable}) {
   const [ content, setContent ] = React.useState(text[0])
 
 
-  const handleTextOverride = () => {
+  const handleTextOverride = (e) => {
+    e.preventDefault()
+    setContent(text[1])
+    navigator.clipboard.writeText(text[2])
 
     //handles when a tool tip is clicked
     ReactGA.event({
       category: 'Button',
-      action: 'Clicked on' + text[0]
-    });
-
-    setContent(text[1])
-    navigator.clipboard.writeText(text[2])
+      action: 'Clicked on button',
+      label: 'Tooltip',
+    })
   }
   return (
-    <Container onClick={() => handleTextOverride()}>
+    <Container onClick={(e) => handleTextOverride(e)}>
       {children}
       <Tooltip>{content}</Tooltip>
     </Container>

@@ -18,6 +18,9 @@ function App() {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, [])
 
+  //The above code is only mounting on intial render
+  console.log(window.location.pathname + window.location.search)
+
   return (
     <Router>
       <HaiProvider value={{theme, setTheme}}>

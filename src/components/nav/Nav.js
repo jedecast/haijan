@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { StyledLink } from '../theme/Texts'
 import NavItemMenu from './NavItemMenu'
-import ReactGA from 'react-ga'
 
 const navItems = [
   {

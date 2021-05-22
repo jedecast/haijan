@@ -40,12 +40,12 @@ function Projects() {
   }, [])
 
   //google analytics click tracker
-  const gaEventHandler = (e, name) => {
-    e.preventDefault()
+  const gaSetFilter = (label) => {
+    setFilter(label)
     //handles when a nav has been clicked on
     ReactGA.event({
       category: 'Projects',
-      action: 'Clicked on ' + name
+      action: 'Clicked on ' + label
     });
   }
 
@@ -57,11 +57,9 @@ function Projects() {
         <Header2 style={{margin:'0 32px 0 24px'}}>Explore</Header2>
 
         {filters.map((f) => (
-          <div key={f.label} onClick={(e) => gaEventHandler(e, f.label)}>
-            <ProjectLabel active={filter === f.label} onClick={() => setFilter(f.label)}>
-              <Button circle={f.color}>{f.label}</Button>
-            </ProjectLabel>
-          </div>
+          <ProjectLabel active={filter === f.label} onClick={() => gaSetFilter(f.label)} key={f.label}>
+            <Button circle={f.color}>{f.label}</Button>
+          </ProjectLabel>
         ))}
 
       </ProjectLabelContainer>
@@ -87,7 +85,6 @@ function Projects() {
               information={item.description.replace( /(<([^>]+)>)/ig, '')}
               content={item.content}
               date={item.pubDate}
-              onClick={(e) => gaEventHandler(e, item.title)}
               >
             </ProjectItem>
         )
