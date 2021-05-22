@@ -24,36 +24,39 @@ export default function Footer() {
         </ContentWrapper>
 
         <SocialContainer>
-          
+
           <FooterItem>
             <Tooltip text={['Linkedin']} clickable={false} >
+              <IconLink href="https://www.linkedin.com/in/janericdecastro/" target='_blank' rel="noreferrer">
               <FaLinkedin style={{width: '24px', height: '24px'}}/>
+              </IconLink>
             </Tooltip>
           </FooterItem>
 
           <FooterItem>
             <Tooltip text={['Twitter']} clickable={false} >
+              <IconLink href="https://twitter.com/_haijan" target='_blank' rel="noreferrer">
               <AiOutlineTwitter style={{width: '24px', height: '24px'}}/>
+              </IconLink>
             </Tooltip>
           </FooterItem>
 
           <FooterItem>
             <Tooltip text={['Instagram']} clickable={false} >
+              <IconLink href="https://www.instagram.com/haijan/" target='_blank' rel="noreferrer">
               <FaInstagram style={{width: '24px', height: '24px'}}/>
+              </IconLink>
             </Tooltip>
           </FooterItem>
 
           <FooterItem>
             <Tooltip text={['Medium']} clickable={false} >
+              <IconLink href="https://medium.com/@haijan" target='_blank' rel="noreferrer">
               <FaMedium style={{width: '24px', height: '24px'}}/>
+              </IconLink>
             </Tooltip>
           </FooterItem>
 
-          <FooterItem>
-            <Tooltip text={['Youtube']} clickable={false} >
-              <FaYoutube style={{width: '24px', height: '24px'}}/>
-            </Tooltip>
-          </FooterItem>
         </SocialContainer>
         <Body2 style={{textAlign:'center', marginTop:'72px'}}>©️ Jan De Castro, designed with &#128150; and coded with a whole lot of 🍵 and 🍷.</Body2>
       </SectionContainer>
@@ -90,4 +93,13 @@ const SocialContainer = styled.ul`
 
 const FooterItem = styled.li`
   margin-right: 24px;
+`
+
+const IconLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 `
