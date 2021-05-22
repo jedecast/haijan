@@ -130,3 +130,20 @@ export const StyledLink = styled(Link)`
         text-decoration: none;
     }
 `
+
+export const MenuLinkContainer = styled.div`
+    text-decoration: none;
+    color: #4F4F4F;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'RobotoRegular';
+    margin-left: 32px;
+    cursor: pointer;
+    @font-face {
+      font-family: 'RobotoRegular';
+      src: url('${RobotoRegular}') format('opentype');
+    }
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+`

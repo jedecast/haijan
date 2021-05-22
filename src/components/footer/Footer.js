@@ -24,6 +24,7 @@ export default function Footer() {
         </ContentWrapper>
 
         <SocialContainer>
+          
           <FooterItem>
             <Tooltip text={['Linkedin']} clickable={false} >
               <FaLinkedin style={{width: '24px', height: '24px'}}/>

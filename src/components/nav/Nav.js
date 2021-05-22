@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { StyledLink } from '../theme/Texts'
+import { StyledLink, MenuLinkContainer } from '../theme/Texts'
 import NavItemMenu from './NavItemMenu'
 
 const navItems = [
@@ -30,9 +30,9 @@ function Nav() {
       <NavWrapper>
         {navItems.map((nav) => (
           nav.isMenu === true
-            ? <StyledLink to={nav.link} key={nav.name}>
+            ? <MenuLinkContainer key={nav.name}>
                   <NavItemMenu>{nav.name}</NavItemMenu>
-              </StyledLink>
+              </MenuLinkContainer>
             : <StyledLink to={nav.link} key={nav.name}>
                   {nav.name}
               </StyledLink>
