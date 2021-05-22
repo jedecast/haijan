@@ -46,13 +46,17 @@ const HeroContainer = styled.div`
   margin: 64px 24px 0px 24px;
   display: flex;
   position: relative;
+  @media (max-width: 992px) {
+    margin-top: 32px;
+  }
 `
 
 const ContentWrapper = styled.div`
   width: 560px;
+
   @media (max-width: 992px) {
     width: 100%;
-    margin-top: 300px;
+    margin-top: 332px;
   }
 `
 
