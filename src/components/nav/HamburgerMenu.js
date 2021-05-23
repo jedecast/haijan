@@ -130,7 +130,7 @@ const StyledBurger = styled.button`
 
 const Burger = ({ open, setOpen }) => {
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
+    <StyledBurger open={open} onClick={() => setOpen()}>
       <div />
       <div />
       <div />
@@ -141,12 +141,21 @@ const Burger = ({ open, setOpen }) => {
 
 export default function HamburgerMenu() {
   const [open, setOpen] = React.useState(false);
+  const [display, setDisplay] = React.useState(false)
   const node = React.useRef();
+
+  const handleOpen = () => {
+    setOpen(!open)
+    setDisplay(!display)
+  }
   return (
     <Container>
       <div ref={node}>
-        <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} />
+        <Burger open={open} setOpen={handleOpen} display={display}/>
+        {
+          display === true && <Menu open={open} setOpen={handleOpen} />
+        }
+
       </div>
     </Container>
   )
