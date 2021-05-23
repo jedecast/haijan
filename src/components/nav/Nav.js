@@ -34,6 +34,8 @@ function Nav() {
         <LogoContainer style={{backgroundImage:`url(${jan})`}}/>
       </Link>
 
+      <HamburgerMenu />
+
       <NavWrapper>
         {navItems.map((nav) => (
           nav.isMenu === true

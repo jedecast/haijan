@@ -20,7 +20,7 @@ function About() {
             A bay-area based multi-disciplinary maker and designer <span style={{color:'#919191'}}>(but honestly just a curious kid in the inside)</span>. He uses his curiousity to tinker around different mediums - creating elegant, useful, and out of the box solutions in the process.
           </Header2>
           <Body1 style={{marginTop:'24px', textAlign: 'left'}}>
-            Hello, I'm Jan. I'm a designer, prototyper, and tinkerer that enjoys reading up on new technologies and creating experiences that I think are interesting. In the past year, I've been heavily investing a lot of time learning about blockchain, investing (in stocks and crypto), and how to build leverage.
+            Hello, I'm Jan. I'm a designer, prototyper, and tinkerer that enjoys reading up on new technologies and creating experiences that I think are interesting. In the past year, I've heavily invested a lot of time learning about blockchain, investing (in stocks and crypto), and how to build leverage.
             <br /> <br /> My goal with this website is to build a brand and have a centralized place to show case all my thoughts, creations, and curiosities.
             <br /> <br /> I'm currently designing People Experience at Workday. At the side I like doodling, researching the next investment, collecting NFTs, and jump roping/running.
           </Body1>
