@@ -1,5 +1,5 @@
 import React from "react"
-import { Header1 } from '../theme/Texts'
+import { Header1, Body1 } from '../theme/Texts'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../footer/Footer'
 
@@ -7,6 +7,8 @@ import Footer from '../footer/Footer'
 
 export default function ProjectPage ({location}) {
   const [ parsed, setParsed ] = React.useState(location.state.content)
+  const link = location.state.link
+  console.log(location.state)
   //to remove all tags: .replace( /(<([^>]+)>)/ig, '')
 
 
@@ -16,9 +18,10 @@ export default function ProjectPage ({location}) {
 
   return(
     <div style={{marginTop: '64px'}}>
-        <Header1 style={{width:'auto', maxWidth:'680px', marginLeft:'auto', marginRight:'auto'}}>{location.state.title}</Header1>
-        <div dangerouslySetInnerHTML={{__html: parsed}} />
+      <Header1 style={{width:'auto', maxWidth:'680px', marginLeft:'auto', marginRight:'auto'}}>{location.state.title}</Header1>
+      <div dangerouslySetInnerHTML={{__html: parsed}} />
 
+      <Body1 style={{width:'auto', maxWidth:'680px', marginLeft:'auto', marginRight:'auto', paddingTop:'32px', borderTop:'1px solid', borderColor:'#919191'}}>This article was written on Medium, come check out the article <a href={link} target='_blank' rel="noreferrer">here.</a></Body1>
       <Footer />
     </div>
   )

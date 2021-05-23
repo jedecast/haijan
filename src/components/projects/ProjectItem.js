@@ -5,7 +5,7 @@ import SubTag from '../misc/SubTag'
 import { Link } from "react-router-dom";
 
 
-export default function ProjectItem ({boldTitle, title, information, imgURL, color, textColor, date, content }) {
+export default function ProjectItem ({boldTitle, title, information, imgURL, color, textColor, date, content, link }) {
   let path = `/project/${title}`
 
   const getReadingTime = () => {
@@ -33,7 +33,7 @@ export default function ProjectItem ({boldTitle, title, information, imgURL, col
     <ProjectContainer>
       <Link to={{
         pathname: path,
-        state: { content, title }
+        state: { content, title, link }
       }} style={{textDecoration: 'none', color: 'inherit'}}>
       <SubTag color={color} subTag={subTag} />
 

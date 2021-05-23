@@ -87,6 +87,7 @@ function Projects() {
               information={item.description.replace( /(<([^>]+)>)/ig, '')}
               content={item.content}
               date={item.pubDate}
+              link={item.link}
               >
             </ProjectItem>
         )
