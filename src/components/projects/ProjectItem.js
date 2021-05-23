@@ -20,7 +20,7 @@ export default function ProjectItem ({boldTitle, title, information, imgURL, col
   const separatedFormat = date.split("-")
   const day = separatedFormat[2].split(" ")
   const newDate = separatedFormat.concat(day[0])
-  const event = new Date(newDate[0], newDate[1], newDate[3]);
+  const event = new Date(newDate[0], newDate[1] - 1, newDate[3]);
 
   const options = { month: 'long'}
   let month = new Intl.DateTimeFormat('en-US', options).format(event)
