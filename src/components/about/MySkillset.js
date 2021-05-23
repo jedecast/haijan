@@ -20,28 +20,28 @@ export default function MySkillset() {
         <SkillItemContainer>
           <Header2 style={{color:'white'}}>Designing</Header2>
           <SkillTextContainer>
-            <Body1 style={{color:'#BDBDBD'}}>To design what I create. Every idea starts with a vision and constraints. I enjoy the process of being creative under limitations and designing a solution that is simple, yet intentful. I design products, experiences, nature scapes, and my life.</Body1>
+            <Body1 style={{color:'#BDBDBD', textAlign: 'left'}}>To design what I create. Every idea starts with a vision and constraints. I enjoy the process of being creative under limitations and designing a solution that is simple, yet intentful. I design products, experiences, nature scapes, and my life.</Body1>
           </SkillTextContainer>
         </SkillItemContainer>
 
         <SkillItemContainer>
           <Header2 style={{color:'white'}}>Creating</Header2>
           <SkillTextContainer>
-            <Body1 style={{color:'#BDBDBD'}}>To create what I design. Putting something into existence and see how the world reacts. I do this through building apps using code, drawing and posting on instagram, prototyping using anything I can get my hands on, etc.</Body1>
+            <Body1 style={{color:'#BDBDBD', textAlign: 'left'}}>To create what I design. Putting something into existence and see how the world reacts. I do this through building apps using code, drawing and posting on instagram, prototyping using anything I can get my hands on, etc.</Body1>
           </SkillTextContainer>
         </SkillItemContainer>
 
         <SkillItemContainer>
           <Header2 style={{color:'white'}}>Writing</Header2>
           <SkillTextContainer>
-            <Body1 style={{color:'#BDBDBD'}}> My thoughts on topics I'm curious about. These are mainly about things that's been on my mind and need to let out or reflections after a memorable experience.</Body1>
+            <Body1 style={{color:'#BDBDBD', textAlign: 'left'}}> My thoughts on topics I'm curious about. These are mainly about things that's been on my mind and need to let out or reflections after a memorable experience.</Body1>
           </SkillTextContainer>
         </SkillItemContainer>
 
         <SkillItemContainer>
           <Header2 style={{color:'white'}}>Investing</Header2>
           <SkillTextContainer>
-            <Body1 style={{color:'#BDBDBD'}}> Building leverage over time. One of the most important skills I've learned over the pandemic and something I will spend my life-time honing. Currently developing a mindset for long-term investment whether it be on myself, relationships, or assets.</Body1>
+            <Body1 style={{color:'#BDBDBD', textAlign: 'left'}}> Building leverage over time. One of the most important skills I've learned over the pandemic and something I will spend my life-time honing. Currently developing a mindset for long-term investment whether it be on myself, relationships, or assets.</Body1>
           </SkillTextContainer>
         </SkillItemContainer>
 

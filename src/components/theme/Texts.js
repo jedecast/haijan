@@ -51,6 +51,12 @@ export const ProjectTitle = styled.h1`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  @media (max-width: 992px) {
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    -webkit-line-clamp: 10;
+  }
 `
 
 export const ProjectTitleBold = styled.span`
