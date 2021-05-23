@@ -29,7 +29,6 @@ function Projects() {
     fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40haijan')
       .then(resp => resp.json())
       .then(data => {
-        console.log(data)
         const filtered = data.items.map(p => ({
           ...p,
           category: 'Writing'

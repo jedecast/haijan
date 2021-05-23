@@ -8,7 +8,6 @@ import Footer from '../footer/Footer'
 export default function ProjectPage ({location}) {
   const [ parsed, setParsed ] = React.useState(location.state.content)
   const link = location.state.link
-  console.log(location.state)
   //to remove all tags: .replace( /(<([^>]+)>)/ig, '')
 
 
