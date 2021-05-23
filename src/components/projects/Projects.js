@@ -26,14 +26,14 @@ function Projects() {
   //https://levelup.gitconnected.com/how-to-dynamically-render-your-medium-blog-posts-on-your-portfolio-site-6b008580bd34
   //https://www.geeksforgeeks.org/how-to-strip-out-html-tags-from-a-string-using-javascript/#:~:text=To%20strip%20out%20all%20the,innerText%20property%20from%20HTML%20DOM.
   React.useEffect(() => {
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@haijan')
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40haijan')
       .then(resp => resp.json())
       .then(data => {
+        console.log(data)
         const filtered = data.items.map(p => ({
           ...p,
           category: 'Writing'
         }));
-        console.log(filtered)
         setMedium(data.items)
         setLoading(false)
       })
@@ -54,13 +54,15 @@ function Projects() {
   return (
     <ProjectContainer>
       <ProjectLabelContainer >
+        <div style={{minWidth:'560px', display:'flex'}}>
         <Header2 style={{margin:'0 32px 0 24px'}}>Explore</Header2>
 
         {filters.map((f) => (
           <ProjectLabel active={filter === f.label} onClick={() => gaSetFilter(f.label)} key={f.label}>
-            <Button circle={f.color}>{f.label}</Button>
+              <Button circle={f.color}>{f.label}</Button>
           </ProjectLabel>
         ))}
+        </div>
 
       </ProjectLabelContainer>
 
@@ -114,7 +116,13 @@ const ProjectContainer = styled.div`
 const ProjectLabelContainer = styled.div`
   display: flex;
   margin-bottom: 32px;
-  width: 1000px;
+  @media (max-width: 992px) {
+    width: 100%;
+    overflow: scroll;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `
 
 const ProjectLabel = styled.div`

@@ -2,6 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { StyledLink, MenuLinkContainer } from '../theme/Texts'
 import NavItemMenu from './NavItemMenu'
+import jan from '../media/jan_logo.png'
+import { Link } from "react-router-dom";
+import HamburgerMenu from './HamburgerMenu'
+
 
 const navItems = [
   {
@@ -26,7 +30,10 @@ function Nav() {
 
   return (
     <NavContainer>
-      <LogoContainer />
+      <Link to='/'>
+        <LogoContainer style={{backgroundImage:`url(${jan})`}}/>
+      </Link>
+
       <NavWrapper>
         {navItems.map((nav) => (
           nav.isMenu === true
@@ -50,11 +57,13 @@ const NavContainer = styled.div`
 `
 
 const LogoContainer = styled.div`
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 24px;
   position: relative;
-  background-color: #2D9CDB;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 const NavWrapper = styled.ul`
